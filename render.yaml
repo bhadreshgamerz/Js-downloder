@@ -1,5 +1,5 @@
 services:
-  - type: web
+  - type: worker
     name: telegram-video-bot
     env: node
     plan: free
@@ -12,4 +12,3 @@ services:
     envVars:
       - key: BOT_TOKEN
         sync: false
-    autoDeploy: true
