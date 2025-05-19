@@ -2,13 +2,14 @@ services:
   - type: web
     name: telegram-video-bot
     env: node
+    region: oregon
     plan: free
+    branch: main
     buildCommand: |
-      apt-get update && \
-      apt-get install -y ffmpeg curl python3 python3-pip && \
-      pip3 install yt-dlp && \
+      apt-get update && apt-get install -y python3 python3-pip ffmpeg
+      pip3 install yt-dlp
       npm install
-    startCommand: npm start
+    startCommand: node index.js
     envVars:
       - key: BOT_TOKEN
         sync: false
