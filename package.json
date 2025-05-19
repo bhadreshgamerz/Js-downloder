@@ -1,0 +1,11 @@
+{
+  "name": "telegram-video-downloader",
+  "version": "1.0.0",
+  "main": "bot.js",
+  "scripts": {
+    "start": "bash start.sh"
+  },
+  "dependencies": {
+    "node-telegram-bot-api": "^0.61.0"
+  }
+}
