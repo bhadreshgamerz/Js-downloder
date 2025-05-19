@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: telegram-video-bot
+    env: node
+    plan: free
+    buildCommand: |
+      apt-get update && \
+      apt-get install -y ffmpeg curl python3 python3-pip && \
+      pip3 install yt-dlp && \
+      npm install
+    startCommand: bash start.sh
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+    autoDeploy: true
